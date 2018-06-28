@@ -5,6 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 
+families = Family.create([
+
+  { last_name: 'Gerard' },
+  { last_name: 'Bazzarone' },
+  { last_name: 'Bennett' },
+  { last_name: 'Carr' },
+  { last_name: 'Wilde' },
+  { last_name: 'McArthur' },
+  { last_name: 'Tenglesen' },
+  { last_name: 'Brooks' },
+  { last_name: 'Fitzgerald' },
+  { last_name: 'Williams' }
+
+  ])
+
+
+
 tags = Tag.create([
 
   { name: 'graduation' },
