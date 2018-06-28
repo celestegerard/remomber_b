@@ -20,6 +20,36 @@ families = Family.create([
 
   ])
 
+  members = Members.create([
+
+    { first_name: 'Celeste',
+      dob: 1993-01-22 09:03:27,
+      is_account: true,
+      family_id: 1
+    },
+    { first_name: 'Lizzy',
+      dob: 1995-01-28 09:11:37,
+      is_account: false,
+      family_id: 1
+    },
+    { first_name: 'Christian',
+      dob: 1997-04-30 10:12:09,
+      is_account: false,
+      family_id: 1
+    },
+    { first_name: 'Ben',
+      dob: 2005-06-12 12:29:27,
+      is_account: false,
+      family_id: 1
+    },
+    { first_name: 'Sam',
+      dob: 2005-06-12 12:29:27,
+      is_account: false,
+      family_id: 1
+    }
+
+    ])
+
 
 
 tags = Tag.create([
