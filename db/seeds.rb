@@ -1,9 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 
 families = Family.create([
 
@@ -20,36 +14,52 @@ families = Family.create([
 
   ])
 
-  members = Members.create([
+  memories = Memory.create([
 
-    { first_name: 'Celeste',
-      dob: 1993-01-22 09:03:27,
-      is_account: true,
-      family_id: 1
+    {
+      timestamp: '2018-02-28 09:12',
+      title: '5th grade graduation',
+      body: 'everytime we tried to go to the zoo, the torrential rain came.',
+      member_id: 3,
+      tag_id: 1
     },
-    { first_name: 'Lizzy',
-      dob: 1995-01-28 09:11:37,
-      is_account: false,
-      family_id: 1
+    {
+      timestamp: '2014-07-03 09:12',
+      title: '3rd grade sockhop',
+      body: 'dance dance dance! there was endless sunny-d',
+      member_id: 2,
+      tag_id: 3
     },
-    { first_name: 'Christian',
-      dob: 1997-04-30 10:12:09,
-      is_account: false,
-      family_id: 1
+    {
+      timestamp: '2007-04-05 03:20',
+      title: 'your 3rd birthday',
+      body: 'blue cake and lavender ruffled rompers',
+      member_id: 3,
+      tag_id: 1
     },
-    { first_name: 'Ben',
-      dob: 2005-06-12 12:29:27,
-      is_account: false,
-      family_id: 1
+    {
+      timestamp: '2001-04-28 09:12',
+      title: 'spring break',
+      body: 'we had spring break. so many cookies.',
+      member_id: 2,
+      tag_id: 2
     },
-    { first_name: 'Sam',
-      dob: 2005-06-12 12:29:27,
-      is_account: false,
-      family_id: 1
+    {
+      timestamp: '2018-07-14 03:22',
+      title: 'the morning after the night in the hospital',
+      body: 'we sat there in that old kitchen, looking at pancakes',
+      member_id: 3,
+      tag_id: 10
+    },
+    {
+      timestamp: '1993-01-22 01:22',
+      title: 'birth story',
+      body: 'I was convinced it was going to be a hard labor.',
+      member_id: 3,
+      tag_id: 2
     }
 
     ])
-
 
 
 tags = Tag.create([
@@ -66,5 +76,3 @@ tags = Tag.create([
   { name: 'dream' }
 
   ])
-
-#   Character.create(name: 'Luke', movie: movies.first)

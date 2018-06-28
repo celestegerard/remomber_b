@@ -6,7 +6,6 @@ class Api::V1::MembersController < ApplicationController
   end
 
   def create
-    byebug
     @member = Member.new(member_params)
     if @member.save
       render json: @member
@@ -19,6 +18,7 @@ class Api::V1::MembersController < ApplicationController
       params.require(:member).permit(
         :first_name,
         :middle_name,
+        :is_account,
         :dob,
         :timestamp,
         :username,

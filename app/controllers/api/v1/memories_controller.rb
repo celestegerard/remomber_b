@@ -6,7 +6,6 @@ class Api::V1::MemoriesController < ApplicationController
   end
 
   def create
-    byebug
     @memory = Memory.new(memory_params)
     if @memory.save
       render json: @memory
