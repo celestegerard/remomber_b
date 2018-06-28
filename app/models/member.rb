@@ -1,4 +1,4 @@
 class Member < ApplicationRecord
   has_many :memories
-  belongs_to :tag
+  belongs_to :family
 end
