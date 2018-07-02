@@ -6,15 +6,22 @@ class Api::V1::MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new(member_params)
+    @member = Member.new
 
     @member.username = params[:username]
     @member.password = params[:password]
 
     if (@member.save)
-      render json: {
+
+      payload = {
         username: @member.username,
         id: @member.id
+      }
+
+      token = JWT.encode payload, ENV['JWT_SECRET'], 'HS256'
+
+      render json: {
+        token: token
       }
     else
       render json: {
@@ -31,7 +38,7 @@ class Api::V1::MembersController < ApplicationController
   private
 
     def member_params
-      params.require(:member).permit(
+      params.permit(
         :first_name,
         :middle_name,
         :is_account,
