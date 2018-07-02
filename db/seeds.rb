@@ -3,7 +3,7 @@ families = Family.create([
 
   { last_name: 'Gerard' },
   { last_name: 'Bazzarone' },
-  { last_name: 'Bennett' },
+  { last_name: 'Bob' },
   { last_name: 'Carr' },
   { last_name: 'Wilde' },
   { last_name: 'McArthur' },

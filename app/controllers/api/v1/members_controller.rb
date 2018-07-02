@@ -7,9 +7,25 @@ class Api::V1::MembersController < ApplicationController
 
   def create
     @member = Member.new(member_params)
-    if @member.save
-      render json: @member
+
+    @member.username = params[:username]
+    @member.password = params[:password]
+
+    if (@member.save)
+      render json: {
+        username: @member.username,
+        id: @member.id
+      }
+    else
+      render json: {
+        errors: @member.errors.full_messages
+      }, status: :unprocessable_entity
     end
+  end
+
+  def members_memories
+    @member = Member.find_by(id: params[:member_id])
+    render json: @member.memories
   end
 
   private

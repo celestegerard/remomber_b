@@ -6,7 +6,6 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def create
-    byebug
     @tag = Tag.new(tag_params)
     if @tag.save
       render json: @tag
