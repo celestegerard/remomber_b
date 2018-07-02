@@ -1,4 +1,5 @@
 class Api::V1::MembersController < ApplicationController
+  before_action :requires_login, only: [:index]
 
   def index
     @members = Member.all
@@ -10,6 +11,15 @@ class Api::V1::MembersController < ApplicationController
 
     @member.username = params[:username]
     @member.password = params[:password]
+
+    members_family = Family.find_by(id: params[:member_id])
+
+      if members_family
+        @member.family = members_family
+      else
+        members_family = Family.create
+        @member.family = members_family
+      end
 
     if (@member.save)
 
@@ -32,7 +42,13 @@ class Api::V1::MembersController < ApplicationController
 
   def members_memories
     @member = Member.find_by(id: params[:member_id])
-    render json: @member.memories
+      if @member.id == get_decoded_token[0]["id"]
+        render json: @member.memories
+      else
+        render json: {
+          message: "no access, not authed"
+        }, status: :unauthorized
+    end
   end
 
   private

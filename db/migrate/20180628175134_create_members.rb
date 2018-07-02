@@ -7,7 +7,7 @@ class CreateMembers < ActiveRecord::Migration[5.2]
       t.boolean :is_account
       t.string :username
       t.string :password
-      t.integer :family_id
+      t.integer :family_id, :null => true
 
       t.timestamps
     end

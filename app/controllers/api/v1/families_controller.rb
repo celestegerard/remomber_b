@@ -16,8 +16,10 @@ class Api::V1::FamiliesController < ApplicationController
 
     def family_params
       params.require(:family).permit(
+
         :last_name
       )
     end
+
 
 end
