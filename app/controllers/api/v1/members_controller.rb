@@ -1,5 +1,6 @@
 class Api::V1::MembersController < ApplicationController
-  # before_action :requires_login, only: [:index]
+  before_action :requires_login, only: [:members_memories]
+  # before_action :requires_user_match, only: [:members_memories]
 
   def index
     @members = Member.all

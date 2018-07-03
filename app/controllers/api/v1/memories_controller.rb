@@ -1,5 +1,5 @@
 class Api::V1::MemoriesController < ApplicationController
-  # before_action :requires_login, only: [:index]
+  before_action :requires_login, only: [:index]
 
   def index
     render json: Memory.all
@@ -7,6 +7,7 @@ class Api::V1::MemoriesController < ApplicationController
 
   def create
     @memory = Memory.new(memory_params)
+
     if @memory.save
       render json: @memory
     end
