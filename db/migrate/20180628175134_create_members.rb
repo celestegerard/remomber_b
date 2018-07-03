@@ -6,7 +6,7 @@ class CreateMembers < ActiveRecord::Migration[5.2]
       t.datetime :dob
       t.boolean :is_account
       t.string :username
-      t.string :password
+      t.string :password_digest
       t.integer :family_id, :null => true
 
       t.timestamps

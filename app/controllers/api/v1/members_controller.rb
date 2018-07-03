@@ -1,5 +1,5 @@
 class Api::V1::MembersController < ApplicationController
-  before_action :requires_login, only: [:index]
+  # before_action :requires_login, only: [:index]
 
   def index
     @members = Member.all
@@ -7,11 +7,10 @@ class Api::V1::MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new
+    @member = Member.new(member_params)
 
     @member.username = params[:username]
     @member.password = params[:password]
-
     members_family = Family.find_by(id: params[:member_id])
 
       if members_family
@@ -31,7 +30,9 @@ class Api::V1::MembersController < ApplicationController
       token = JWT.encode payload, ENV['JWT_SECRET'], 'HS256'
 
       render json: {
-        token: token
+        token: token,
+        id: @member.id,
+        status: :accepted
       }
     else
       render json: {

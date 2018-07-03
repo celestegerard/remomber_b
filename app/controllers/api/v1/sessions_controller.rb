@@ -1,10 +1,13 @@
-class SessionsController < ApplicationController
+class Api::V1::SessionsController < ApplicationController
 
   def create
     @member = Member.find_by(username: params["username"])
     if (@member && @member.authenticate(params["password"]))
+
+      token = generate_token
+
       render json: {
-        username: @member.username,
+        token: token,
         id: @member.id
       }
     else
