@@ -1,5 +1,5 @@
 class Api::V1::MembersController < ApplicationController
-  before_action :requires_login, only: [:members_memories]
+  # before_action :requires_login, only: [:members_memories]
   # before_action :requires_user_match, only: [:members_memories]
 
   def index
@@ -12,6 +12,7 @@ class Api::V1::MembersController < ApplicationController
 
     @member.username = params[:username]
     @member.password = params[:password]
+    @member.first_name = params[:first_name]
     members_family = Family.find_by(id: params[:member_id])
 
       if members_family
