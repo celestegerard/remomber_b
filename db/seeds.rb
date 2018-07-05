@@ -15,15 +15,6 @@ families = Family.create([
   ])
 
 
-  members = Member.create([
-
-    { first_name: 'Celeste', family_id: 1 },
-    { first_name: 'Bob', family_id: 2 },
-    { first_name: 'Maria', family_id: 3 }
-
-    ])
-
-
   memories = Memory.create([
 
     {

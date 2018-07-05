@@ -13,6 +13,7 @@ class Api::V1::MembersController < ApplicationController
     @member.username = params[:username]
     @member.password = params[:password]
     @member.first_name = params[:first_name]
+    @member.family_id = params[:family_id]
     members_family = Family.find_by(id: params[:member_id])
 
       if members_family
