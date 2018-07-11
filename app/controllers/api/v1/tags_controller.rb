@@ -6,12 +6,12 @@ class Api::V1::TagsController < ApplicationController
     render json: @tags
   end
 
-  def create
-    @tag = Tag.new(tag_params)
-    if @tag.save
-      render json: @tag
-    end
-  end
+  # def create
+  #   @tag = Tag.new(tag_params)
+  #   if @tag.save
+  #     render json: @tag
+  #   end
+  # end
 
   private
 

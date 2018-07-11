@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2018_06_28_175134) do
     t.string "first_name"
     t.string "middle_name"
     t.datetime "dob"
-    t.boolean "is_account"
     t.string "username"
     t.string "password_digest"
     t.integer "family_id"
@@ -34,10 +33,8 @@ ActiveRecord::Schema.define(version: 2018_06_28_175134) do
   end
 
   create_table "memories", force: :cascade do |t|
-    t.datetime "timestamp"
     t.string "title"
     t.string "body"
-    t.integer "tag_id"
     t.integer "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -44,16 +44,17 @@ class Api::V1::MembersController < ApplicationController
     end
   end
 
-  def members_memories
-    @member = Member.find_by(id: params[:member_id])
-      if @member.id == get_decoded_token[0]["id"]
-        render json: @member.memories
-      else
-        render json: {
-          message: "no access, not authed"
-        }, status: :unauthorized
-    end
-  end
+  # def members_memories
+  #   @member = Member.find_by(id: params[:member_id])
+  #     if @member.id == get_decoded_token[0]["id"]
+  #       byebug
+  #       render json: @member.memories
+  #     else
+  #       render json: {
+  #         message: "no access, not authed"
+  #       }, status: :unauthorized
+  #   end
+  # end
 
   private
 
@@ -61,7 +62,6 @@ class Api::V1::MembersController < ApplicationController
       params.permit(
         :first_name,
         :middle_name,
-        :is_account,
         :dob,
         :timestamp,
         :username,
