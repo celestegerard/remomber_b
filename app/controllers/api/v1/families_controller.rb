@@ -6,7 +6,6 @@ class Api::V1::FamiliesController < ApplicationController
   end
 
   def create
-    debugger
     @family = Family.new(family_params)
     @family.last_name = params[:last_name]
 

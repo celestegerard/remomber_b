@@ -8,6 +8,9 @@ class Api::V1::MemoriesController < ApplicationController
   def create
     @memory = Memory.new(memory_params)
 
+    @memory.title = params[:title]
+    @memory.body = params[:body]
+
     if @memory.save
       render json: @memory
     end
