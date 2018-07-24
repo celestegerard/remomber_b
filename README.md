@@ -12,6 +12,7 @@ Remomber is an application built with both frontend and backend technologies.
   * Custom CSS
   * Material UI
   
+  Backend
   * Ruby on Rails
 
 # Demo
